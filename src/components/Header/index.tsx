@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import "../../style/style.css";
 
 
 function Header() {
@@ -13,7 +14,7 @@ function Header() {
             <nav>
                 <div>
                     <button onClick={navegarHome}>
-                        <image width='50px' height='50px' href='' />
+                        <img width="96" height="96" src="https://img.icons8.com/pulsar-line/48/coliseum.png" alt="coliseum"/>
 
                         <p>Coliseu</p>
                     </button>
