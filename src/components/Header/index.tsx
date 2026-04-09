@@ -22,6 +22,7 @@ function Header() {
                 </div>
                 <Link to='/campeonatos'>Campeonatos</Link>
                 <Link to='/campeonato'>Campeonato</Link>
+                <Link to='/register'>Register</Link>
             </nav>
         </>
     )

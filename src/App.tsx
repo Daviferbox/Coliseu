@@ -4,6 +4,7 @@ import ChampionshipDetail from './pages/ChampionshipDetail'
 import Championships from './pages/Championships'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import Register from './pages/register.tsx'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/campeonatos' element={<Championships />} />
         <Route path='/campeonato' element={<ChampionshipDetail />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
     </>
   )
