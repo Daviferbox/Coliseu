@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "../../style/register.css";
 
@@ -18,8 +20,10 @@ function Register() {
                 </div>
             </div><br /><br />
             <button className="cadastro">Cadastrar</button><br />
+            <Link to="/login">Já tem uma conta? Faça login aqui.</Link>
             <p></p>
         </div>
+        <Footer />
     </>   
     );
 }

@@ -1,0 +1,41 @@
+.container_input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.input_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.button_login {
+    display: flex;
+    color: white;
+    font-size: 22px;
+    height: 70px;
+    width: 200px;
+    border: none;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.button_login:hover {
+    background-color: #1b71ce;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.button_login:active {
+    background-color: #1b71ce;
+    cursor: pointer;
+    transform: scale(0.95);
+}
