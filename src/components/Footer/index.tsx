@@ -1,3 +1,4 @@
+import"../../style/footer.css"
 function Footer() {
 
     return (
@@ -17,11 +18,12 @@ function Footer() {
                         <br />
                         suporte</p>
                 </div>
-                
+
                 <div className="div_footer3">
                     <p>Campeonatos
                         <br />
                         Noticias</p>
+                        
                 </div>
             </footer>
         </>
