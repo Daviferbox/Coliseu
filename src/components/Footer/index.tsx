@@ -1,40 +1,38 @@
 
 function Footer() {
 
-    return (
-        <>
-            <p>TO FUNCIONANDO</p>
+  return (
+    <>
+      <footer className="footer">
+        <div className="footer__container">
 
-              <footer>
-                <div className="footer-container">
- 
-                    <div className="footer-col">
-                        <h3>Nome da Empresa</h3>
-                        <p>Uma frase curta que defina o propósito do seu projeto ou marca.</p>
-                    </div>
- 
-                    <div className="footer-col">
-                        <h3>Institucional</h3>
-                        <ul>
-                            <li><a href="/sobre">Sobre</a></li>
-                            <li><a href="/trabalhe-conosco">Trabalhe Conosco</a></li>
-                            <li><a href="/suporte">Suporte</a></li>
-                        </ul>
-                    </div>
- 
-                    <div className="footer_1">
-                        <h3>Conteúdo</h3>
-                        <ul>
-                            <li><a href="/campeonatos">Campeonatos</a></li>
-                            <li><a href="/noticias">Notícias</a></li>
-                        </ul>
-                    </div>
- 
-                </div>
-            </footer>
-        </>
+          <div className="footer__brand">
+            <h3 className="footer__title">Nome da Empresa</h3>
+            <p className="footer__description">Uma frase curta que defina o propósito do seu projeto ou marca.</p>
+          </div>
 
-    )
+          <div className="footer__links">
+            <h3 className="footer__title">Institucional</h3>
+            <ul className="footer__list">
+              <li className="footer__item"><a href="/sobre" className="footer__link" data-desc="Saiba mais sobre nossa empresa e missão">Sobre</a></li>
+              <li className="footer__item"><a href="/trabalhe-conosco" className="footer__link" data-desc="Veja oportunidades de carreira">Trabalhe Conosco</a></li>
+              <li className="footer__item"><a href="/suporte" className="footer__link" data-desc="Central de ajuda e suporte ao usuário">Suporte</a></li>
+            </ul>
+          </div>
+
+          <div className="footer__links">
+            <h3 className="footer__title">Conteúdo</h3>
+            <ul className="footer__list">
+              <li className="footer__item"><a href="/campeonatos" className="footer__link" data-desc="Veja os campeonatos em destaque">Campeonatos</a></li>
+              <li className="footer__item"><a href="/noticias" className="footer__link" data-desc="Últimas notícias e atualizações">Notícias</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </footer>
+    </>
+
+  )
 }
 
 export default Footer;
