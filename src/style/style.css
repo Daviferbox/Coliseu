@@ -160,3 +160,59 @@ button p{
   pointer-events: none;
 }
 
+
+   /* Container principal do footer */
+footer {
+  background-color:var(--color0); /* Fundo escuro */
+  color: #ffffff;
+  padding: 10px 10px;
+  font-family: sans-serif;
+}
+ 
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Faz as colunas quebrarem linha em telas pequenas */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+.footer-col {
+  flex: 1;
+  min-width: 250px; /* Largura mínima antes de quebrar linha */
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+ 
+.footer-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: orange; /* Cor de destaque (ex: laranja) */
+}
+ 
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+ 
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+ 
+.footer-col ul li a {
+  text-decoration: none;
+  color: #cccccc;
+  transition: 0.3s;
+}
+ 
+.footer-col ul li a:hover {
+  color: #ffffff; /* Efeito ao passar o mouse */
+}
+ 
+/* Ajuste para telas pequenas (Mobile) */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
