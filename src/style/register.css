@@ -42,7 +42,19 @@ input:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.cadastro{
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.success {
+    color: green;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.cadastro {
     display: flex;
     width: 250px;
     height: 70px;
@@ -54,10 +66,8 @@ input:focus {
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    transition: all 0.3s ease;
-    align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+
 }
 
 .cadastro:hover {
@@ -71,3 +81,8 @@ input:focus {
     transform: scale(0.99);
 }
 
+.entre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

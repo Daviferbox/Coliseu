@@ -39,3 +39,9 @@
     cursor: pointer;
     transform: scale(0.95);
 }
+
+.login{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+}

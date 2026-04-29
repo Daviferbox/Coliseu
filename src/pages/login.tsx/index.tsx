@@ -7,37 +7,35 @@ import { authenticateUser } from "../../data/mockData";
 
 function Login() {
 
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-function handleLogin() {
-    const user = authenticateUser(email, password);
+    function handleLogin() {
+        const user = authenticateUser(email, password);
 
-    if (user) {
-        alert("Login bem-sucedido!");
-    } else {
-        alert("Email ou senha incorretos. Tente novamente.");
+        if (user) {
+            alert("Login bem-sucedido!");
+        } else {
+            alert("Email ou senha incorretos. Tente novamente.");
+        }
     }
-}
 
-return (
-    <>
-        <Header />
+    return (
+        <>
+            <Header />
 
-        <h1>Login</h1>
-        <div className="container_input">
-            <input type="email" placeholder="Email" value={email} className="input_login" onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" placeholder="Senha" value={password} className="input_login" onChange={(e) => setPassword(e.target.value)} /><br /><br />
-            <button type="submit" className="button_login" onClick={handleLogin}>Login</button><br />
-            <Link to="/register">Não tem uma conta? Cadastre-se aqui.</Link>
-        </div>
-        
+            <h1>Login</h1>
+            <div className="container_input">
+                <input type="email" placeholder="Email" value={email} className="input_login" onChange={(e) => setEmail(e.target.value)} />
+                <input type="password" placeholder="Senha" value={password} className="input_login" onChange={(e) => setPassword(e.target.value)} /><br /><br />
+                <button type="submit" className="button_login" onClick={handleLogin}>Login</button><br />
+                <Link to="/register">Não tem uma conta? Cadastre-se aqui.</Link>
+            </div>
+            
+            <Footer />
 
-        <Footer />
-
-    </>
+        </>
     )
 }
 
 export default Login;
-    
