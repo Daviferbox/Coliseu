@@ -1,32 +1,57 @@
-import { Link, useNavigate } from "react-router-dom";
-import "../../style/style.css";
-
+import { useNavigate } from 'react-router-dom'
+import '../../style/header.css'
 
 function Header() {
+  const navigate = useNavigate()
 
-    const navigate = useNavigate();
-    const navegarHome = () => {
-        navigate('/')
-    }
+  const navegarCampeonatos = () => {
+    navigate('/campeonatos')
+  };
 
-    return (
-        <>
-            <nav>
-                <div>
-                    <button onClick={navegarHome}>
-                        <img width="96" height="96" src="https://img.icons8.com/pulsar-line/48/coliseum.png" alt="coliseum"/>
+  const navegarCampeonato = () => {
+    navigate('/campeonato')
+  };
 
-                        <p>Coliseu</p>
-                    </button>
+  const navegarRegistro = () => {
+    navigate('/register')
+  };
 
-                </div>
-                <Link to='/campeonatos'>Campeonatos</Link>
-                <Link to='/campeonato'>Campeonato</Link>
-                <Link to='/register'>Register</Link>
-            </nav>
-        </>
-    )
+  const navegarLogin = () => {
+    navigate('/login')
+  }
 
+  return (
+    <nav className="header-nav" role="navigation" aria-label="Main navigation">
+
+        <div className="brand" >
+
+            <img src="https://img.icons8.com/pulsar-line/48/coliseum.png" alt="Coliseu logo" />
+            <span className="brand-title">Coliseu</span>
+
+        </div>
+
+        <div className="nav-actions" aria-hidden={false}>
+
+            <button className="btn-link" onClick={navegarCampeonatos}>
+              Campeonatos
+            </button>
+
+            <button className="btn-link" onClick={navegarCampeonato}>
+              Campeonato
+            </button>
+
+            <button className="btn-link" onClick={navegarRegistro}>
+              Registrar
+            </button>
+
+            <button className="btn-link btn-primary" onClick={navegarLogin}>
+              Entrar
+            </button>
+
+        </div>
+
+    </nav>
+  )
 }
 
-export default Header;
+export default Header
