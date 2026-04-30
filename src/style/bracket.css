@@ -1,0 +1,130 @@
+.bracket {
+  display: flex;
+  gap: 60px;
+  padding: 20px;
+  overflow-x: auto;
+  background-color: #2b2b2b;
+}
+
+/* ROUND */
+.bracket__round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 220px;
+}
+
+.bracket__round-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ccc;
+  height: fit-content;
+}
+
+/* MATCH */
+.bracket__match {
+  position: relative;
+  margin: 25px 0;
+}
+
+/* TEAM */
+.bracket__team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #444;
+  color: #ddd;
+
+  padding: 8px 12px;
+  border-radius: 6px;
+
+  border: 1px solid #666;
+}
+
+.bracket__team+.bracket__team {
+  margin-top: 4px;
+}
+
+/* WINNER */
+.bracket__team--winner {
+  background: linear-gradient(90deg, #f7c948, #f4b400);
+  color: #000;
+  font-weight: bold;
+}
+
+/* ATIVA LINHAS SOMENTE EM TREE */
+.bracket--tree .bracket__match::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: #888;
+}
+
+.bracket--tree .bracket__match::before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -50%;
+  width: 2px;
+  height: 200%;
+  background-color: #888;
+}
+
+/* remove no último round */
+.bracket--tree .bracket__round:last-child .bracket__match::after,
+.bracket--tree .bracket__round:last-child .bracket__match::before {
+  display: none;
+}
+
+.bracket--tree .bracket__round:nth-child(2) .bracket__match {
+  margin: 50px 0;
+}
+
+.bracket--tree .bracket__round:nth-child(3) .bracket__match {
+  margin: 90px 0;
+}
+
+.bracket--tree .bracket__round:nth-child(4) .bracket__match {
+  margin: 140px 0;
+}
+
+/* TABLE */
+.bracket--table {
+  flex-direction: column;
+}
+
+.bracket__match--row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #444;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.bracket__match--content {
+  text-align: center;
+  padding: 5px;
+  flex: 1;
+}
+
+.bracket__match--score {
+  text-align: center;
+  flex: 1;
+}
+
+/* DOUBLE */
+.bracket--double {
+  display: flex;
+  gap: 40px;
+}
+
+.bracket__section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

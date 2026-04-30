@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import type { Props } from "../interfaces";
 
 function ChampionshipCard({ campeonato }: Props) {
+
+    const navigate = useNavigate();
 
     const data = campeonato.dataProximoJogo
         ? new Date(campeonato.dataProximoJogo)
@@ -15,10 +18,31 @@ function ChampionshipCard({ campeonato }: Props) {
 
         return `${dia}/${mes}/${ano} ${hora}:${minuto}`;
     };
-    
+
     return (
         <>
-            <div className="campeonato-card" onClick={() => { }}>
+            <div className="campeonato-card" onClick={() => {
+                navigate('/campeonato',
+                    {
+                        state: {
+                            id: campeonato.id,
+                            nome: campeonato.nome,
+                            jogo: campeonato.jogo,
+                            imagem: campeonato.imagem,
+                            premiacao: campeonato.premiacao,
+                            dataProximoJogo: campeonato.dataProximoJogo,
+                            disponivelParaInscricao: campeonato.disponivelParaInscricao,
+                            status: campeonato.status,
+                            rank: campeonato.rank,
+                            formato: campeonato.formato,
+                            descricao: campeonato.descricao,
+                            regras: campeonato.regras,
+                            dono: campeonato.dono,
+                            rodadas: campeonato.rodadas,
+                            equipes: campeonato.equipes
+                        }
+                    })
+            }}>
 
                 <img
                     className="campeonato-card__imagem"
@@ -40,8 +64,8 @@ function ChampionshipCard({ campeonato }: Props) {
 
                 <div
                     className={`campeonato-card__status ${campeonato.disponivelParaInscricao
-                            ? "campeonato-card__status--disponivel"
-                            : "campeonato-card__status--indisponivel"
+                        ? "campeonato-card__status--disponivel"
+                        : "campeonato-card__status--indisponivel"
                         }`}
                 >
                     <div className="campeonato-card__status-indicador"></div>
@@ -53,12 +77,11 @@ function ChampionshipCard({ campeonato }: Props) {
                     </p>
                 </div>
 
-                <div className="campeonato-card__patente">
+                <div className={`campeonato-card__patente campeonato-card__patente-${campeonato.rank}`}>
                     <p className="campeonato-card__patente-texto">
                         {campeonato.rank}
                     </p>
                 </div>
-
             </div>
         </>
     )

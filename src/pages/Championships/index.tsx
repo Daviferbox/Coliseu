@@ -27,7 +27,6 @@ function Championships() {
                     <ChampionshipCard key={e.id} campeonato={e} />
                 )
                 )}
-
             </div>
         </>
     )
