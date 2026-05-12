@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import type { Props } from "../interfaces";
+import "../../style/championship.css"
 
 function ChampionshipCard({ campeonato }: Props) {
 

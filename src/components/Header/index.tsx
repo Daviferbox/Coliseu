@@ -4,6 +4,10 @@ import '../../style/header.css'
 function Header() {
   const navigate = useNavigate()
 
+  const navegarHome = () => {
+    navigate('/')
+  };
+
   const navegarCampeonatos = () => {
     navigate('/campeonatos')
   };
@@ -23,7 +27,7 @@ function Header() {
   return (
     <nav className="header-nav" role="navigation" aria-label="Main navigation">
 
-        <div className="brand" >
+        <div className="brand" onClick={navegarHome} >
 
             <img src="https://img.icons8.com/pulsar-line/48/coliseum.png" alt="Coliseu logo" />
             <span className="brand-title">Coliseu</span>

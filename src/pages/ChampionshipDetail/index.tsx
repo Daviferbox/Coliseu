@@ -8,6 +8,7 @@ import calendarIcon from "../../assets/calendario.png";
 import treeIcon from "../../assets/arvore-do-grafico.png";
 import teamIcon from "../../assets/engrenagem-dos-usuarios.png";
 import editSetupIcon from "../../assets/engrenagem-dos-usuarios.png";
+import "../../style/championshipDetail.css"
 
 type Match = {
     id: string;
