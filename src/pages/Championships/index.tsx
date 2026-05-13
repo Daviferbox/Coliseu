@@ -3,9 +3,12 @@ import ChampionshipCard from "../../components/ChampionshipCard";
 import Header from "../../components/Header";
 import { getChampionshipsByStatus } from "../../data/mockData.ts";
 import type { Campeonato } from "../../components/interfaces/index.ts";
+import { useNavigate } from "react-router-dom";
 
 
 function Championships() {
+
+    const navigate = useNavigate();
 
     const [campeonatos, setCampeonatos] = useState<Campeonato[]>([])
 
@@ -13,7 +16,6 @@ function Championships() {
         async function fetchData() {
             const data: any[] = await getChampionshipsByStatus("todos");
             setCampeonatos(data);
-            console.log(data)
         }
 
         fetchData();
@@ -22,6 +24,11 @@ function Championships() {
     return (
         <>
             <Header />
+            <div className="area-adicionar_novo">
+                <button className="btn-link novo" onClick={() => navigate("/CadastrarNovoCampeonato")}>
+                    Adicionar Novo Campeonato
+                </button>
+            </div>
             <div className="campeonatos-cards">
                 {campeonatos?.map((e: Campeonato) => (
                     <ChampionshipCard key={e.id} campeonato={e} />
