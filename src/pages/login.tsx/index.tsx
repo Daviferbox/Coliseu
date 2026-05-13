@@ -3,13 +3,17 @@ import Footer from "../../components/Footer";
 import Modal from "../../components/Modal/Modal";
 import "../../style/login.css";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { authenticateUser } from "../../data/mockData";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isModalOpen, setIsModalOpen] = useState<boolean>(true); // open by route
+
+    // refs para acessibilidade / foco
+    const firstInputRef = useRef<HTMLInputElement | null>(null);
+    const modalRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         // when page mounted via /login, keep modal open; no-op otherwise
@@ -26,6 +30,38 @@ function Login() {
             alert("Email ou senha incorretos. Tente novamente.");
         }
     }
+
+    // foco inicial e atalhos (Esc + trap de foco simples)
+    useEffect(() => {
+        if (!isModalOpen) return;
+
+        // foco no primeiro input ao abrir
+        firstInputRef.current?.focus();
+
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setIsModalOpen(false);
+            }
+            if (e.key === "Tab" && modalRef.current) {
+                const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+                    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+                );
+                if (focusable.length === 0) return;
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                } else if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            }
+        };
+
+        document.addEventListener("keydown", onKeyDown);
+        return () => document.removeEventListener("keydown", onKeyDown);
+    }, [isModalOpen]);
 
     return (
         <>
