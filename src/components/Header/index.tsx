@@ -1,7 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import '../../style/header.css'
 
-function Header() {
+interface HeaderProps {
+  onOpenRegister?: () => void
+  onOpenLogin?: () => void
+}
+
+function Header({ onOpenRegister, onOpenLogin }: HeaderProps) {
   const navigate = useNavigate()
 
   const navegarCampeonatos = () => {
@@ -13,11 +18,13 @@ function Header() {
   };
 
   const navegarRegistro = () => {
-    navigate('/register')
+    if (onOpenRegister) onOpenRegister()
+    else navigate('/register')
   };
 
   const navegarLogin = () => {
-    navigate('/login')
+    if (onOpenLogin) onOpenLogin()
+    else navigate('/login')
   }
 
   return (
