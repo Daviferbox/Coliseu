@@ -11,19 +11,28 @@ interface ModalProps {
 export default function Modal({ isOpen, onClose, labelledBy, children }: ModalProps) {
     const overlayRef = useRef<HTMLDivElement | null>(null);
     const previousActiveRef = useRef<HTMLElement | null>(null);
+    const hasInitialFocusRef = useRef(false);
 
     useEffect(() => {
-        if (!isOpen) return;
+        if (!isOpen) {
+            hasInitialFocusRef.current = false;
+            return;
+        }
+        
         previousActiveRef.current = document.activeElement as HTMLElement | null;
 
         const focusFirst = () => {
+            if (hasInitialFocusRef.current) return; // Só foca uma vez
+            hasInitialFocusRef.current = true;
+            
             const nodes = overlayRef.current?.querySelectorAll<HTMLElement>(
                 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
             ) ?? [];
             nodes[0]?.focus();
         };
 
-        focusFirst();
+        // Foca após um pequeno delay para garantir que o DOM está pronto
+        const focusTimer = setTimeout(focusFirst, 0);
 
         const onKey = (e: KeyboardEvent) => {
             if (e.key === "Escape") onClose();
@@ -51,6 +60,7 @@ export default function Modal({ isOpen, onClose, labelledBy, children }: ModalPr
         const prevOverflow = document.body.style.overflow;
         document.body.style.overflow = "hidden";
         return () => {
+            clearTimeout(focusTimer);
             document.removeEventListener("keydown", onKey);
             document.body.style.overflow = prevOverflow;
             previousActiveRef.current?.focus();

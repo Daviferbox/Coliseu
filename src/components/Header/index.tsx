@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom'
+import { useContext, useState } from 'react'
+import { UsuarioLogadoContext } from '../../context/AuthContext'
 import '../../style/header.css'
 
 interface HeaderProps {
@@ -7,7 +9,9 @@ interface HeaderProps {
 }
 
 function Header({ onOpenRegister, onOpenLogin }: HeaderProps) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const authContext = useContext(UsuarioLogadoContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navegarHome = () => {
     navigate('/')
@@ -15,10 +19,6 @@ function Header({ onOpenRegister, onOpenLogin }: HeaderProps) {
 
   const navegarCampeonatos = () => {
     navigate('/campeonatos')
-  };
-
-  const navegarCampeonato = () => {
-    navigate('/campeonato')
   };
 
   const navegarRegistro = () => {
@@ -30,6 +30,24 @@ function Header({ onOpenRegister, onOpenLogin }: HeaderProps) {
     if (onOpenLogin) onOpenLogin()
     else navigate('/login')
   }
+
+  const handleLogout = () => {
+    if (authContext) {
+      authContext.setId('');
+      authContext.setNome('');
+      authContext.setApelido('');
+      authContext.setEmail('');
+      authContext.setSenha('');
+      authContext.setAvatar('');
+      authContext.setLogado(false);
+      setIsMenuOpen(false);
+    }
+  };
+
+  const verCampeonatos = () => {
+    navegarCampeonatos();
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="header-nav" role="navigation" aria-label="Main navigation">
@@ -47,17 +65,51 @@ function Header({ onOpenRegister, onOpenLogin }: HeaderProps) {
               Campeonatos
             </button>
 
-            <button className="btn-link" onClick={navegarCampeonato}>
-              Campeonato
-            </button>
+            {authContext?.logado ? (
+              <div className="user-menu-container">
+                <button 
+                  className="avatar-button"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  title={`${authContext.apelido}`}
+                >
+                  <img 
+                    src={authContext.avatar} 
+                    alt={`Avatar de ${authContext.apelido}`}
+                    className="avatar-img"
+                  />
+                </button>
 
-            <button className="btn-link" onClick={navegarRegistro}>
-              Registrar
-            </button>
+                {isMenuOpen && (
+                  <div className="user-menu-dropdown">
+                    <div className="menu-header">
+                      <p className="user-nickname">{authContext.apelido}</p>
+                    </div>
+                    <button 
+                      className="menu-item"
+                      onClick={verCampeonatos}
+                    >
+                      📋 Meus Campeonatos
+                    </button>
+                    <button 
+                      className="menu-item logout"
+                      onClick={handleLogout}
+                    >
+                      🚪 Deslogar
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <>
+                <button className="btn-link" onClick={navegarRegistro}>
+                  Registrar
+                </button>
 
-            <button className="btn-link btn-primary" onClick={navegarLogin}>
-              Entrar
-            </button>
+                <button className="btn-link btn-primary" onClick={navegarLogin}>
+                  Entrar
+                </button>
+              </>
+            )}
 
         </div>
 
