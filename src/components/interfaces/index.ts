@@ -7,7 +7,7 @@ export interface Campeonato {
     dataProximoJogo: string;
     disponivelParaInscricao: boolean;
     status: string;
-    rank: number;
+    rank: string;
     formato: string;
     descricao: string;
     regras: string;

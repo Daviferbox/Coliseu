@@ -3,16 +3,16 @@ import ChampionshipCard from "../../components/ChampionshipCard";
 import Header from "../../components/Header";
 import { getChampionshipsByStatus } from "../../data/mockData.ts";
 import type { Campeonato } from "../../components/interfaces/index.ts";
-import { useNavigate } from "react-router-dom";
 import { UsuarioLogadoContext } from "../../context/AuthContext.tsx";
+import NewChampionship from "../NewChampionship";
 
 
 function Championships() {
 
-    const navigate = useNavigate();
     const authContext = useContext(UsuarioLogadoContext);
 
-    const [campeonatos, setCampeonatos] = useState<Campeonato[]>([])
+    const [campeonatos, setCampeonatos] = useState<Campeonato[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -23,12 +23,19 @@ function Championships() {
         fetchData();
     }, []);
 
+    const handleAddChampionship = (newChampionship: Campeonato) => {
+        setCampeonatos([newChampionship, ...campeonatos]);
+    };
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     return (
         <>
             <Header />
             {authContext?.logado ? (
                 <div className="area-adicionar_novo">
-                    <button className="btn-link novo" onClick={() => navigate("/CadastrarNovoCampeonato")}>
+                    <button className="btn-link novo" onClick={openModal}>
                         Adicionar Novo Campeonato
                     </button>
                 </div>
@@ -40,6 +47,12 @@ function Championships() {
                 )
                 )}
             </div>
+
+            <NewChampionship 
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                onAddChampionship={handleAddChampionship}
+            />
         </>
     )
 
