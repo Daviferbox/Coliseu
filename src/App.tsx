@@ -6,7 +6,6 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Register from './pages/register.tsx'
 import Login from './pages/login.tsx/index.tsx'
-import NewChampionship from './pages/NewChampionship/index.tsx'
 import { UsuarioLogadoProvider } from './context/AuthContext.tsx'
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
           <Route path='/campeonato' element={<ChampionshipDetail />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/cadastrarNovoCampeonato' element={<NewChampionship />} />
         </Routes>
       </UsuarioLogadoProvider>
     </>
