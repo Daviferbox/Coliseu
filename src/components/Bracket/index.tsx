@@ -1,6 +1,6 @@
 import "../../style/bracket.css";
 
-type Match = {
+export type Match = {
     id: string;
     campeonatoId: string;
     fase: string;
@@ -9,25 +9,26 @@ type Match = {
     vencedor: string[];
 };
 
-type Equipe = {
+export type Equipe = {
     id: string;
     nomeEquipe: string;
     logoEquipe: string;
 };
 
-type Props = {
+export type BracketProps = {
     campeonatoId: string;
     formato: string;
-    equipes: Equipe[];
+    equipes?: Equipe[];
     matches: Match[];
 };
 
-function Bracket({ campeonatoId, formato, equipes, matches }: Props) {
+function Bracket({ campeonatoId, formato, matches }: BracketProps) {
 
     const isTree = formato === "single_elimination" || formato === "double_elimination";
     const partidas = matches.filter(m => m.campeonatoId === campeonatoId);
 
     const fases = [...new Set(partidas.map(p => p.fase))];
+
 
     // =============================
     // 🧠 SINGLE ELIMINATION (principal)

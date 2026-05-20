@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import type { Props } from "../interfaces";
 import "../../style/championship.css"
+import { useContext } from "react";
+import { UsuarioLogadoContext } from "../../context/AuthContext";
 
 function ChampionshipCard({ campeonato }: Props) {
+
+    const authContext = useContext(UsuarioLogadoContext);
 
     const navigate = useNavigate();
 
@@ -20,10 +24,10 @@ function ChampionshipCard({ campeonato }: Props) {
         return `${dia}/${mes}/${ano} ${hora}:${minuto}`;
     };
 
-    return (
-        <>
-            <div className="campeonato-card" onClick={() => {
-                navigate('/campeonato',
+    const handleCardClick = () => {
+        if (!authContext?.logado) return;
+
+        navigate('/campeonato',
                     {
                         state: {
                             id: campeonato.id,
@@ -42,8 +46,14 @@ function ChampionshipCard({ campeonato }: Props) {
                             rodadas: campeonato.rodadas,
                             equipes: campeonato.equipes
                         }
-                    })
-            }}>
+                    });
+        
+    }
+
+    return (
+        <>
+            {}
+            <div className="campeonato-card" onClick={ handleCardClick }>
 
                 <img
                     className="campeonato-card__imagem"

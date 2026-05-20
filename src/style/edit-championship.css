@@ -1,0 +1,319 @@
+.edit-championship-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scrollbar-width: none;
+    overflow-y: auto;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.edit-championship-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.edit-championship-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    color: #333;
+}
+
+.edit-championship-edit-button {
+    padding: 10px 20px;
+    background-color: var(--color1);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-championship-edit-button:hover {
+    background-color: var(--color6);
+    color: #333;
+    transform: scale(1.05);
+}
+
+.edit-championship-no-access {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border: 2px dashed #ddd;
+    text-align: center;
+}
+
+.edit-championship-no-access p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.edit-championship-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* SECTION */
+.edit-championship-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--color1);
+}
+
+.edit-championship-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+/* FIELD */
+.edit-championship-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: flex-start;    
+    width: 100%;
+}
+
+.edit-championship-field:last-child {
+    margin-bottom: 0;
+}
+
+.edit-championship-field label {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.edit-championship-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+/* INPUTS */
+.edit-championship-input,
+.edit-championship-textarea {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: white;
+    color: #333;
+    width: 100%;
+}
+
+.edit-championship-input:disabled,
+.edit-championship-textarea:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.edit-championship-input:focus:not(:disabled),
+.edit-championship-textarea:focus:not(:disabled) {
+    outline: none;
+    border-color: var(--color1);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.edit-championship-textarea {
+    resize: vertical;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    min-width: 400px;
+}
+
+/* IMAGE SECTION */
+.edit-championship-image-field {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.edit-championship-image-preview {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.edit-championship-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit-championship-file-input {
+    display: none;
+}
+
+.edit-championship-file-label {
+    padding: 10px 20px;
+    background-color: var(--color3);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.edit-championship-file-label:hover {
+    border-color: var(--color1);
+    background-color: var(--color1);
+    color: white;
+}
+
+/* CHECKBOX */
+.edit-championship-checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.edit-championship-checkbox-field input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--color1);
+}
+
+.edit-championship-checkbox-field label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.edit-championship-checkbox-field input[type="checkbox"]:disabled,
+.edit-championship-checkbox-field label:has(+ input[type="checkbox"]:disabled) {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ACTIONS */
+.edit-championship-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.edit-championship-save-button,
+.edit-championship-cancel-button {
+    flex: 1;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-championship-save-button {
+    background-color: var(--color1);
+    color: white;
+}
+
+.edit-championship-save-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+.edit-championship-save-button:active {
+    transform: scale(0.98);
+}
+
+.edit-championship-cancel-button {
+    background-color: #f5f5f5;
+    color: #666;
+    border: 2px solid #ddd;
+}
+
+.edit-championship-cancel-button:hover {
+    background-color: #e8e8e8;
+    border-color: #999;
+}
+
+.edit-championship-cancel-button:active {
+    transform: scale(0.98);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .edit-championship-container {
+        gap: 15px;
+    }
+
+    .edit-championship-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .edit-championship-header h1 {
+        font-size: 24px;
+    }
+
+    .edit-championship-edit-button {
+        width: 100%;
+    }
+
+    .edit-championship-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .edit-championship-section {
+        padding: 15px;
+    }
+
+    .edit-championship-actions {
+        flex-direction: column;
+    }
+
+    .edit-championship-save-button,
+    .edit-championship-cancel-button {
+        width: 100%;
+    }
+
+    .edit-championship-image-preview {
+        max-width: 100%;
+        height: 200px;
+    }
+}
