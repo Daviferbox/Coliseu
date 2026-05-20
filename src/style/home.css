@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;700&display=swap');
+
+.section-1,
+.section-2,
+.section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+}
+
+
+section {
+    height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+    
+}
+
+main {
+    /* altura do Header */
+    margin-bottom: 60px;
+    /* altura do Footer */
+}
+
+.texto-1 {
+    font-size: 26px;
+}
+
+.titulo-1 {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+img {
+    border-radius: 30%;
+    height: 150px;
+    width: 150px;
+}
+
+.container-informacoes, .container-informacoes2, .container-informacoes3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.container-informacoes2{
+    gap: 90px;
+}
+
+.container-informacoes3{
+    gap: 100px;
+}
+
+.informaçoes-section-2 {
+    font-size: 26px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.container-informacoes3 {
+    font-size: 24px;
+    text-align: center;
+    max-width: 800px;
+}
+
+/* ...existing code... */
+
+.titulo-1 {
+    display: inline-block;
+    font-weight: bold;
+    color: #0b4eff;
+    background: linear-gradient(90deg,
+            #0b4eff 0%,
+            #426de6 40%,
+            #9fd4ff 50%,
+            #426de6 60%,
+            #426de6 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: coliseu-shine 2.5s linear infinite;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    font-family: 'Rajdhani', 'Orbitron', "Segoe UI", Roboto, sans-serif;
+}
+
+/* ...existing code... */
+@keyframes coliseu-shine {
+    0% {
+        background-position: -100% 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.container-imagens {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.texto-1 {
+    font-size: 29px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.texto-2 {
+    font-size: 24px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.container-informacoes2 h2 {
+    display: inline-block;
+    font-weight: bold;
+    color: #0b4eff;
+    background: linear-gradient(
+        90deg,
+        #0b4eff 0%,
+        #426de6 40%,
+        #9fd4ff 50%,
+        #426de6 60%,
+        #426de6 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: coliseu-shine 2.5s linear infinite;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-size: 34px;
+    text-align: center;
+}
+
+
+
+/* ...existing code... */
+
+.btn-primary{
+    appearance: none;
+    -webkit-appearance: none;
+    background: linear-gradient(180deg, #1350e8 0%, #08306b 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(6,30,70,0.35), 0 0 0 4px rgba(11,78,255,0.04) inset;
+    transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+    display: inline-block;
+}
+
+/* foco acessível */
+.btn-primary:focus{
+    outline: none;
+    box-shadow: 0 10px 30px rgba(6,30,70,0.45), 0 0 0 6px rgba(11,78,255,0.12);
+    transform: translateY(-2px);
+}
+
+/* hover */
+.btn-primary:hover{
+    transform: translateY(-3px);
+    filter: brightness(1.06);
+    box-shadow: 0 14px 36px rgba(6,30,70,0.45), 0 0 0 6px rgba(11,78,255,0.08);
+}
+
+/* clique */
+.btn-primary:active{
+    transform: translateY(0);
+    box-shadow: 0 6px 18px rgba(6,30,70,0.28);
+}
+
+/* versão reduzida em telas pequenas */
+@media (max-width:480px){
+    .btn-primary{
+        padding: 12px 18px;
+        font-size: 16px;
+    }
+}
