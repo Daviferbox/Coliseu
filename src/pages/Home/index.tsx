@@ -29,12 +29,12 @@ function Home() {
                     
                     <div className="container-imagens">
 
-                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/e1bd06c3f8089e7552aa0552cb387c92/32/512x512.png"   alt="Icone Counter Strike 2" />
-                        <img src="https://i.pinimg.com/736x/a4/00/33/a400333f7c9137ad1ebb9ded69755c48.jpg" alt="Icone do valorant" />
-                        <img src="https://th.bing.com/th/id/R.090d79cc5c15db0880f8d930fb279b5a?rik=C4xj7AASl7SJsg&riu=http%3a%2f%2ftsukiyashop.com%2fcdn%2fshop%2fcollections%2flol-564233.png%3fv%3d1748087810&ehk=kM1YxaFJXNtnRFoVh8f1Y2f28ctjxPcQiXAy4VPq7No%3d&risl=&pid=ImgRaw&r=0" alt="icone lol" />
-                        <img src="https://tl.vhv.rs/dpng/s/582-5820129_rocket-league-icon-png-transparent-png.png" alt="icone rocket league" />
-                        <img src="https://www.citypng.com/public/uploads/preview/hd-dota-2-official-logo-png-701751694788589vbfyq561nz.png" alt="Icone dota 2" />
-                        <img src="https://cdn2.steamgriddb.com/icon_thumb/1bda4c789c38754f639a376716c5859f.png" alt="" />
+                        <img className="icone-jogos" src="https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/e1bd06c3f8089e7552aa0552cb387c92/32/512x512.png"   alt="Icone Counter Strike 2" />
+                        <img className="icone-jogos" src="https://i.pinimg.com/736x/a4/00/33/a400333f7c9137ad1ebb9ded69755c48.jpg" alt="Icone do valueant" />
+                        <img className="icone-jogos" src="https://th.bing.com/th/id/R.090d79cc5c15db0880f8d930fb279b5a?rik=C4xj7AASl7SJsg&riu=http%3a%2f%2ftsukiyashop.com%2fcdn%2fshop%2fcollections%2flol-564233.png%3fv%3d1748087810&ehk=kM1YxaFJXNtnRFoVh8f1Y2f28ctjxPcQiXAy4VPq7No%3d&risl=&pid=ImgRaw&r=0" alt="icone lol" />
+                        <img className="icone-jogos" src="https://tl.vhv.rs/dpng/s/582-5820129_rocket-league-icon-png-transparent-png.png" alt="icone rocket league" />
+                        <img className="icone-jogos" src="https://www.citypng.com/public/uploads/preview/hd-dota-2-official-logo-png-701751694788589vbfyq561nz.png" alt="Icone dota 2" />
+                        <img className="icone-jogos" src="https://cdn2.steamgriddb.com/icon_thumb/1bda4c789c38754f639a376716c5859f.png" alt="" />
 
                     </div>
 

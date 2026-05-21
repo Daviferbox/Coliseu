@@ -8,12 +8,11 @@
     align-items: center;
     justify-content: flex-start;
     gap: 60px;
-}
-
-
-section {
     height: 100vh;
 }
+
+
+
 
 html {
     scroll-behavior: smooth;
@@ -35,7 +34,7 @@ main {
     font-weight: bold;
 }
 
-img {
+.icone-jogos {
     border-radius: 30%;
     height: 150px;
     width: 150px;
@@ -87,11 +86,6 @@ img {
     -webkit-text-fill-color: transparent;
     animation: coliseu-shine 2.5s linear infinite;
     -webkit-font-smoothing: antialiased;
-}
-
-html,
-body {
-    font-family: 'Rajdhani', 'Orbitron', "Segoe UI", Roboto, sans-serif;
 }
 
 /* ...existing code... */

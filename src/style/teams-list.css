@@ -12,7 +12,7 @@
     font-size: 32px;
     font-weight: 700;
     margin: 0;
-    color: #333;
+    color: var(--text-h);
 }
 
 .teams-list-empty {
@@ -20,14 +20,14 @@
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    background-color: #f5f5f5;
+    background: var(--gradient-light);
     border-radius: 8px;
-    border: 2px dashed #ddd;
+    border: 2px dashed var(--border);
 }
 
 .teams-list-empty p {
     font-size: 18px;
-    color: #666;
+    color: var(--text-secondary);
     text-align: center;
     margin: 0;
 }
@@ -40,22 +40,23 @@
 
 .teams-list-card {
     position: relative;
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 12px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-light);
     padding: 20px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    box-shadow: var(--shadow-md);
 }
 
 .teams-list-card:hover {
     border-color: var(--color1);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+    box-shadow: 0 8px 20px rgba(41, 26, 240, 0.15);
     transform: translateY(-5px);
 }
 
@@ -65,17 +66,18 @@
     height: 120px;
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
-    transition: all 0.3s ease;
+    background: var(--bg-secondary);
+    transition: all var(--transition-base);
 }
 
 .teams-list-card:hover .teams-list-logo {
     border-color: var(--color1);
     transform: scale(1.05);
+    box-shadow: var(--shadow-md);
 }
 
 .teams-list-logo-image {
@@ -89,7 +91,7 @@
     font-size: 18px;
     font-weight: 700;
     margin: 0;
-    color: #333;
+    color: var(--text-h);
     word-break: break-word;
 }
 
@@ -98,10 +100,11 @@
     font-size: 12px;
     font-weight: 600;
     color: white;
-    background-color: var(--color1);
+    background: var(--gradient-primary);
     padding: 6px 12px;
     border-radius: 20px;
     text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(41, 26, 240, 0.25);
 }
 
 /* TOOLTIP */
@@ -110,15 +113,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.95);
-    color: white;
+    background-color: var(--bg-secondary);
+    color: var(--text);
     padding: 20px;
     border-radius: 8px;
     width: calc(100% - 40px);
     max-height: 90%;
     overflow-y: auto;
     z-index: 10;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border);
     animation: fadeInScale 0.2s ease;
 }
 
@@ -157,7 +161,7 @@
     flex-direction: column;
     gap: 3px;
     padding: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--overlay-light);
     border-radius: 4px;
     font-size: 12px;
 }
@@ -169,7 +173,7 @@
 
 .teams-list-tooltip-nome {
     font-size: 11px;
-    color: #ccc;
+    color: var(--text-secondary);
 }
 
 /* RESPONSIVO */

@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    margin-bottom: 60px;
+}
+
+.section-1,
+.section-2,
+.section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+    height: 100vh;
+    padding: 40px 20px;
+}
+
+/* CONTAINERS */
+.container-informacoes, 
+.container-informacoes2, 
+.container-informacoes3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.container-informacoes2 {
+    gap: 90px;
+}
+
+.container-informacoes3 {
+    gap: 100px;
+}
+
+.container-imagens {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* TÍTULOS */
+.titulo-1 {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 55px;
+    background: var(--gradient-primary);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: coliseu-shine 2.5s linear infinite;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container-informacoes2 h2 {
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-size: 34px;
+    text-align: center;
+    background: var(--gradient-primary);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: coliseu-shine 2.5s linear infinite;
+    -webkit-font-smoothing: antialiased;
+}
+
+@keyframes coliseu-shine {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* TEXTOS */
+.texto-1 {
+    font-size: 29px;
+    text-align: center;
+    max-width: 600px;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.texto-2 {
+    font-size: 24px;
+    text-align: center;
+    max-width: 600px;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.informaçoes-section-2 {
+    font-size: 26px;
+    text-align: center;
+    max-width: 600px;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ÍCONES */
+.icone-jogos {
+    border-radius: 30%;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--border-light);
+}
+
+.icone-jogos:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: var(--shadow-xl);
+}
+
+/* BOTÃO PRIMARY */
+.btn-primary {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    display: inline-block;
+    font-family: var(--sans);
+}
+
+.btn-primary:focus {
+    outline: none;
+    box-shadow: 0 10px 30px rgba(41, 26, 240, 0.45), 0 0 0 6px rgba(41, 26, 240, 0.12);
+    transform: translateY(-2px);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.06);
+    box-shadow: var(--shadow-xl);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .section-1,
+    .section-2,
+    .section-3 {
+        height: auto;
+        gap: 40px;
+        padding: 30px 16px;
+    }
+
+    .titulo-1 {
+        font-size: 36px;
+    }
+
+    .container-informacoes2 h2 {
+        font-size: 28px;
+    }
+
+    .texto-1,
+    .texto-2,
+    .informaçoes-section-2 {
+        font-size: 18px;
+    }
+
+    .container-imagens {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .icone-jogos {
+        height: 120px;
+        width: 120px;
+    }
+
+    .btn-primary {
+        padding: 12px 18px;
+        font-size: 16px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-1,
+    .section-2,
+    .section-3 {
+        gap: 30px;
+    }
+
+    .titulo-1 {
+        font-size: 28px;
+    }
+
+    .container-informacoes2 h2 {
+        font-size: 22px;
+    }
+
+    .texto-1,
+    .texto-2,
+    .informaçoes-section-2 {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .icone-jogos {
+        height: 100px;
+        width: 100px;
+    }
+}

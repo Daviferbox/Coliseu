@@ -13,32 +13,34 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--border-light);
 }
 
 .edit-championship-header h1 {
     font-size: 32px;
     font-weight: 700;
     margin: 0;
-    color: #333;
+    color: var(--text-h);
 }
 
 .edit-championship-edit-button {
     padding: 10px 20px;
-    background-color: var(--color1);
+    background: var(--gradient-primary);
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
 }
 
 .edit-championship-edit-button:hover {
-    background-color: var(--color6);
-    color: #333;
-    transform: scale(1.05);
+    background: var(--gradient-accent);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
 }
 
 .edit-championship-no-access {
@@ -47,15 +49,15 @@
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    background-color: #f5f5f5;
+    background: var(--gradient-light);
     border-radius: 8px;
-    border: 2px dashed #ddd;
+    border: 2px dashed var(--border);
     text-align: center;
 }
 
 .edit-championship-no-access p {
     font-size: 16px;
-    color: #666;
+    color: var(--text-secondary);
     margin: 10px 0;
 }
 
@@ -70,17 +72,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
     border-left: 4px solid var(--color1);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.edit-championship-section:hover {
+    box-shadow: var(--shadow-lg);
 }
 
 .edit-championship-section h2 {
     font-size: 18px;
     font-weight: 700;
     margin: 0 0 15px 0;
-    color: #333;
+    color: var(--text-h);
 }
 
 /* FIELD */
@@ -100,7 +108,7 @@
 
 .edit-championship-field label {
     font-weight: 600;
-    color: #333;
+    color: var(--text-h);
     font-size: 14px;
 }
 
@@ -115,36 +123,34 @@
 .edit-championship-input,
 .edit-championship-textarea {
     padding: 12px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-light);
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
-    transition: all 0.3s ease;
-    background-color: white;
-    color: #333;
+    transition: all var(--transition-base);
+    background: var(--card-bg);
+    color: var(--text);
     width: 100%;
 }
 
 .edit-championship-input:disabled,
 .edit-championship-textarea:disabled {
-    background-color: #f5f5f5;
-    color: #999;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
     cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .edit-championship-input:focus:not(:disabled),
 .edit-championship-textarea:focus:not(:disabled) {
     outline: none;
     border-color: var(--color1);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(41, 26, 240, 0.1);
 }
 
 .edit-championship-textarea {
     resize: vertical;
-    width: 100%;
-    height: 100%;
-    min-height: 200px;
-    min-width: 400px;
+    min-height: 100px;
 }
 
 /* IMAGE SECTION */
@@ -153,6 +159,7 @@
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    width: 100%;
 }
 
 .edit-championship-image-preview {
@@ -161,11 +168,12 @@
     height: 300px;
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
 }
 
 .edit-championship-image-preview img {
@@ -180,21 +188,23 @@
 
 .edit-championship-file-label {
     padding: 10px 20px;
-    background-color: var(--color3);
-    border: 2px solid #ddd;
+    background: var(--gradient-primary);
+    border: 2px solid var(--color1);
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
-    color: #333;
+    color: white;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
     text-align: center;
+    box-shadow: var(--shadow-md);
 }
 
 .edit-championship-file-label:hover {
-    border-color: var(--color1);
-    background-color: var(--color1);
-    color: white;
+    background: var(--gradient-accent);
+    border-color: var(--color6);
+    color: #000;
+    box-shadow: var(--shadow-lg);
 }
 
 /* CHECKBOX */
@@ -216,6 +226,7 @@
     margin: 0;
     cursor: pointer;
     font-weight: 500;
+    color: var(--text);
 }
 
 .edit-championship-checkbox-field input[type="checkbox"]:disabled,
@@ -230,7 +241,7 @@
     gap: 15px;
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 2px solid #ddd;
+    border-top: 2px solid var(--border-light);
 }
 
 .edit-championship-save-button,
@@ -242,36 +253,43 @@
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
+    font-family: var(--sans);
 }
 
 .edit-championship-save-button {
-    background-color: var(--color1);
+    background: var(--gradient-primary);
     color: white;
+    box-shadow: var(--shadow-md);
 }
 
 .edit-championship-save-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
 }
 
 .edit-championship-save-button:active {
-    transform: scale(0.98);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .edit-championship-cancel-button {
-    background-color: #f5f5f5;
-    color: #666;
-    border: 2px solid #ddd;
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
 }
 
 .edit-championship-cancel-button:hover {
-    background-color: #e8e8e8;
-    border-color: #999;
+    background: var(--bg-secondary);
+    border-color: var(--color1);
+    color: var(--color1);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
 }
 
 .edit-championship-cancel-button:active {
-    transform: scale(0.98);
+    transform: translateY(-1px);
 }
 
 /* RESPONSIVO */
@@ -310,10 +328,5 @@
     .edit-championship-save-button,
     .edit-championship-cancel-button {
         width: 100%;
-    }
-
-    .edit-championship-image-preview {
-        max-width: 100%;
-        height: 200px;
     }
 }

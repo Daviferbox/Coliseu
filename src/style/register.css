@@ -67,7 +67,7 @@ input:focus {
     color: white;
     cursor: pointer;
     justify-content: center;
-
+    align-items: center;
 }
 
 .cadastro:hover {

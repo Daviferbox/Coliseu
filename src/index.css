@@ -1,26 +1,43 @@
 :root {
-  --color1: #291AF0;
-  --color2: #464336;
-  --color3: #473FB0;
-  --color4: #474470;
-  --color5: #9B8D45;
-  --color6: #F0CE1A;
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* ========== PALETA DE CORES PRIMÁRIA ========== */
+  --color1: #291AF0;     /* Azul Principal - CTA, Destaques */
+  --color2: #464336;     /* Marrom Escuro - Backgrounds Secundários */
+  --color3: #473FB0;     /* Roxo - Cards, Panels */
+  --color4: #474470;     /* Roxo Cinzento - Backgrounds */
+  --color5: #9B8D45;     /* Ouro Escuro - Badges, Accents */
+  --color6: #F0CE1A;     /* Amarelo Brilhante - Highlights, Awards */
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* ========== LIGHT MODE (PADRÃO) ========== */
+  --text: #2d3748;
+  --text-h: #1a202c;
+  --text-secondary: #4a5568;
+  --bg: #ffffff;
+  --bg-secondary: #f7fafc;
+  --border: #cbd5e0;
+  --border-light: #e2e8f0;
+  --card-bg: #ffffff;
+  --overlay-light: rgba(0, 0, 0, 0.05);
+  --overlay-medium: rgba(0, 0, 0, 0.1);
 
+  /* ========== SHADOW SYSTEM ========== */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.18);
+
+  /* ========== GRADIENTES ========== */
+  --gradient-primary: linear-gradient(135deg, #291AF0 0%, #473FB0 100%);
+  --gradient-accent: linear-gradient(135deg, #F0CE1A 0%, #9B8D45 100%);
+  --gradient-dark: linear-gradient(135deg, #464336 0%, #474470 100%);
+  --gradient-light: linear-gradient(135deg, #f7fafc 0%, #e2e8f0 100%);
+
+  /* ========== TRANSIÇÕES ========== */
+  --transition-fast: 120ms ease;
+  --transition-base: 260ms ease;
+  --transition-slow: 380ms ease;
+
+  /* ========== TIPOGRAFIA ========== */
+  --sans: 'Rajdhani', 'Orbitron', "Segoe UI", Roboto, sans-serif;
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
@@ -38,17 +55,29 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    /* ========== DARK MODE ========== */
+    --text: #e2e8f0;
+    --text-h: #f7fafc;
+    --text-secondary: #cbd5e0;
+    --bg: #0f1419;
+    --bg-secondary: #1a202c;
+    --border: #2d3748;
+    --border-light: #4a5568;
+    --card-bg: #1a202c;
+    --overlay-light: rgba(255, 255, 255, 0.05);
+    --overlay-medium: rgba(255, 255, 255, 0.1);
+
+    /* ========== SHADOW DARK ========== */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+    /* ========== GRADIENTES DARK ========== */
+    --gradient-primary: linear-gradient(135deg, #3d2ff5 0%, #5a4ec7 100%);
+    --gradient-accent: linear-gradient(135deg, #ffd700 0%, #b8960f 100%);
+    --gradient-dark: linear-gradient(135deg, #2d2d2d 0%, #3d3d4d 100%);
+    --gradient-light: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
   }
 
   #social .button-icon {
@@ -66,6 +95,11 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  font-family: var(--sans) !important;
+}
+
+button {
+  font-family: var(--sans);
 }
 
 body {
@@ -74,20 +108,12 @@ body {
 
 h1,
 h2 {
-  font-family: var(--heading);
+  font-family: var(--sans);
   font-weight: 500;
   color: var(--text-h);
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -99,13 +125,5 @@ h2 {
 }
 p {
   margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
 }
 

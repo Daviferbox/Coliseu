@@ -12,7 +12,11 @@
     font-size: 32px;
     font-weight: 700;
     margin: 0;
-    color: #333;
+    color: var(--text-h);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .register-team-form {
@@ -22,17 +26,23 @@
 }
 
 .register-team-section {
-    background-color: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
     border-left: 4px solid var(--color1);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.register-team-section:hover {
+    box-shadow: var(--shadow-lg);
 }
 
 .register-team-section h2 {
     font-size: 20px;
     font-weight: 700;
     margin: 0 0 20px 0;
-    color: #333;
+    color: var(--text-h);
 }
 
 /* FIELDS */
@@ -67,13 +77,19 @@
 .register-team-logo-preview {
     width: 120px;
     height: 120px;
-    border: 2px dashed #ddd;
+    border: 2px dashed var(--border-light);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    background: var(--bg-secondary);
+    transition: all var(--transition-base);
+}
+
+.register-team-logo-preview:hover {
+    border-color: var(--color1);
+    box-shadow: var(--shadow-md);
 }
 
 .register-team-logo-preview img {
@@ -84,20 +100,24 @@
 
 .register-team-file-input {
     padding: 10px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-light);
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    background: var(--card-bg);
+    color: var(--text);
+    transition: all var(--transition-base);
+    font-family: inherit;
 }
 
 .register-team-file-input:hover {
     border-color: var(--color1);
+    box-shadow: var(--shadow-md);
 }
 
 .register-team-helper-text {
     font-size: 12px;
-    color: #666;
+    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -105,24 +125,26 @@
 .register-team-input,
 .register-team-input-number {
     padding: 12px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border-light);
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
-    transition: border-color 0.3s ease;
+    background: var(--card-bg);
+    color: var(--text);
+    transition: all var(--transition-base);
 }
 
 .register-team-input:focus,
 .register-team-input-number:focus {
     outline: none;
     border-color: var(--color1);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(41, 26, 240, 0.1);
 }
 
 /* LABEL */
 .register-team-section label {
     font-weight: 600;
-    color: #333;
+    color: var(--text-h);
     font-size: 14px;
 }
 
@@ -134,20 +156,30 @@
 }
 
 .register-team-jogador-card {
-    background-color: var(--color3);
+    background: var(--gradient-primary);
+    background-opacity: 0.1;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     display: flex;
     flex-direction: column;
     gap: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+
+.register-team-jogador-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .register-team-jogador-number {
     font-size: 12px;
     font-weight: 700;
-    color: #666;
+    color: var(--color6);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
 }
 
 .register-team-jogador-fields {
@@ -158,21 +190,23 @@
 
 .register-team-jogador-input {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 6px;
     font-size: 13px;
     font-family: inherit;
-    transition: border-color 0.3s ease;
+    background: var(--card-bg);
+    color: var(--text);
+    transition: all var(--transition-fast);
 }
 
 .register-team-jogador-input:focus {
     outline: none;
     border-color: var(--color1);
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+    box-shadow: 0 0 0 2px rgba(41, 26, 240, 0.1);
 }
 
 .register-team-jogador-input::placeholder {
-    color: #999;
+    color: var(--text-secondary);
 }
 
 /* ACTIONS */
@@ -185,24 +219,27 @@
 .register-team-submit-button {
     flex: 1;
     padding: 14px 24px;
-    background-color: var(--color1);
+    background: var(--gradient-primary);
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
 }
 
 .register-team-submit-button:hover:not(:disabled) {
-    background-color: var(--color6);
-    color: #333;
-    transform: scale(1.02);
+    background: var(--gradient-accent);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
 }
 
 .register-team-submit-button:active:not(:disabled) {
-    transform: scale(0.98);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .register-team-submit-button:disabled {
@@ -228,6 +265,20 @@
 
     .register-team-form {
         gap: 20px;
+    }
+
+    .register-team-row {
+        grid-template-columns: 1fr;
+    }
+
+    .register-team-jogadores-list {
+        grid-template-columns: 1fr;
+    }
+
+    .register-team-section {
+        padding: 15px;
+    }
+}
     }
 
     .register-team-section {

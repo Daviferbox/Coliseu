@@ -61,7 +61,7 @@ function Header({ onOpenRegister, onOpenLogin }: HeaderProps) {
 
         <div className="nav-actions" aria-hidden={false}>
 
-            <button className="btn-link" onClick={navegarCampeonatos}>
+            <button className="btn-link-header" onClick={navegarCampeonatos}>
               Campeonatos
             </button>
 
@@ -101,11 +101,11 @@ function Header({ onOpenRegister, onOpenLogin }: HeaderProps) {
               </div>
             ) : (
               <>
-                <button className="btn-link" onClick={navegarRegistro}>
+                <button className="btn-link-header" onClick={navegarRegistro}>
                   Registrar
                 </button>
 
-                <button className="btn-link btn-primary" onClick={navegarLogin}>
+                <button className="btn-link-header btn-primary" onClick={navegarLogin}>
                   Entrar
                 </button>
               </>
