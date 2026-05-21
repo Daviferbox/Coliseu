@@ -1,10 +1,15 @@
 import "../../style/login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useRef, useContext, useCallback } from "react";
 import { authenticateUser } from "../../data/mockData";
 import { UsuarioLogadoContext } from "../../context/AuthContext";
 
-function Login() {
+interface LoginProps {
+    onLoginSuccess?: () => void;
+    onOpenRegister?: () => void;
+}
+
+function Login({ onLoginSuccess, onOpenRegister }: LoginProps) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -26,11 +31,15 @@ function Login() {
             authContext.setLogado(true);
 
             alert("Login bem-sucedido!");
-            navigate('/');
+            if (onLoginSuccess) {
+                onLoginSuccess();
+            } else {
+                navigate('/');
+            }
         } else {
             alert("Email ou senha incorretos. Tente novamente.");
         }
-    }, [email, password, authContext, navigate]);
+    }, [email, password, authContext, navigate, onLoginSuccess]);
 
     return (
         <>
@@ -43,7 +52,14 @@ function Login() {
                         <button type="button" className="button_login" onClick={handleLogin}>Login</button>
                     </div>
                     <div style={{ marginTop: 12 }}>
-                        <Link to="/register">Não tem uma conta? Cadastre-se aqui.</Link>
+                        <button
+                            type="button"
+                            className="btn-link"
+                            onClick={onOpenRegister}
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#0b4eff', textDecoration: 'underline' }}
+                        >
+                            Não tem uma conta? Cadastre-se aqui.
+                        </button>
                     </div>
                 </div>
             </div>
