@@ -14,6 +14,7 @@ import treeIcon from "../../assets/arvore-do-grafico.png";
 import teamIcon from "../../assets/engrenagem-dos-usuarios.png";
 import editSetupIcon from "../../assets/engrenagem-dos-usuarios.png";
 import "../../style/championshipDetail.css"
+import type { Match } from "../../components/Bracket";
 
 function ChampionshipDetail() {
     const [activeTab, setActiveTab] = useState(0);
@@ -21,7 +22,12 @@ function ChampionshipDetail() {
     const { id, nome, jogo, imagem, premiacao, dataProximoJogo, disponivelParaInscricao, status, rank, formato, descricao, regras, dono, rodadas, equipes } = location.state || {};
     
     // Buscar partidas do campeonato
-    const matches = id ? getMatchesByChampionship(id) : [];
+    const matches: Match[] = id ? getMatchesByChampionship(id).map(match => ({
+        ...match,
+        placar: Object.fromEntries(
+            Object.entries(match.placar).map(([key, value]) => [key, value || 0])
+        )
+    })) : []; // Ensure placar values are numbers
 
     const renderTabContent = () => {
         switch (activeTab) {

@@ -6,12 +6,7 @@ import Login from '../../pages/Login/index.tsx'
 import Register from '../../pages/Register'
 import '../../style/header.css'
 
-interface HeaderProps {
-  onOpenRegister?: () => void
-  onOpenLogin?: () => void
-}
-
-function Header({ onOpenRegister, onOpenLogin }: HeaderProps) {
+function Header() {
   const navigate = useNavigate();
   const authContext = useContext(UsuarioLogadoContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
