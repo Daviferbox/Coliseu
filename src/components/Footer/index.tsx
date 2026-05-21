@@ -12,8 +12,8 @@ function Footer() {
         <div className="footer__container">
 
           <div className="footer__brand">
-            <h3 className="footer__title">Nome da Empresa</h3>
-            <p className="footer__description">Uma frase curta que defina o propósito do seu projeto ou marca.</p>
+            <h3 className="footer__title">COLISEU</h3>
+            <p className="footer__description">Conecte-se ao mundo competitivo de forma simples e profissional com o Coliseu!</p>
           </div>
 
           <div className="footer__links">
